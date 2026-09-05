@@ -45,6 +45,7 @@ function tocarSom(frequencia, tipo) {
 startBtn.addEventListener('click', iniciarJogo);
 restartBtn.addEventListener('click', iniciarJogo);
 
+// Controle por teclado (Computador)
 document.addEventListener('keydown', (event) => {
     if (event.code === 'Space' && !isGameOver && pulos < 2 && !gameScreen.classList.contains('hidden')) {
         pular();
@@ -55,6 +56,16 @@ document.addEventListener('keydown', (event) => {
         }
     }
 });
+
+// Controle por toque na tela (Celular / Tablets)
+document.addEventListener('touchstart', (event) => {
+    if (!isGameOver && pulos < 2 && !gameScreen.classList.contains('hidden')) {
+        pular();
+    }
+    if (!startScreen.classList.contains('hidden') || !endScreen.classList.contains('hidden')) {
+        iniciarJogo();
+    }
+}, { passive: true });
 
 function iniciarJogo() {
     startScreen.classList.add('hidden');
