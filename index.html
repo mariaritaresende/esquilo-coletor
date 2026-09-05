@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Esquilo Coletor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <audio id="bg-music" loop>
+            <source src="musica.mp3" type="audio/mpeg">
+        </audio>
+        
+        <div id="start-screen" class="screen">
+            <h1>Esquilo Coletor</h1>
+            <p>Use a tecla ESPAÇO para pular. Colete 40 nozes em 50 segundos!</p>
+            <button id="start-btn">Iniciar Jogo</button>
+        </div>
+        
+        <div id="game-screen" class="hidden">
+            <div id="hud">
+                <span>Nozes: <strong id="score">0</strong></span>
+                <span>Tempo: <strong id="time">40</strong>s</span>
+            </div>
+            <div id="esquilo"></div>
+        </div>
+
+        <div id="end-screen" class="screen hidden">
+            <h2 id="end-message">Game Over</h2>
+            <button id="restart-btn">Tentar Novamente</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
